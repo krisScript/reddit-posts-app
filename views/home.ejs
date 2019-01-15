@@ -1,0 +1,61 @@
+<%- include('includes/head.ejs') %>
+    </head>
+  
+  <body>
+      <%- include('includes/navigation.ejs') %>
+    <section class="section">
+      <div class="box  has-text-centered">
+        <h1 class="title is-size-1 ">Search Reddit</h1>
+        <form method="POST" action="/posts">
+        <div class="field">
+            <div class="control ">
+              <input class="input " type="text" placeholder="Search Reddit" name="searchTerm" required>
+              
+            </div>
+          </div>
+          <div class="field">
+  <div class="control">
+    <label >Sort by:</label>
+    <label class="radio">
+      <input type="radio" name="sortBy" value="relevance" >
+      Relevence
+    </label>
+    <label class="radio">
+      <input type="radio" name="sortBy" value="new">
+      New
+    </label>
+    <label class="radio">
+      <input type="radio" name="sortBy" value="hot">
+      Hot
+    </label>
+    <label class="radio">
+      <input type="radio" name="sortBy" value="Top">
+      Top
+    </label>
+  </div>
+</div>
+<div class="field">
+    <label >Number of Posts</label>
+  <div class="control">
+    <div class="select">
+      <select name="searchLimit">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="25">25</option>
+      </select>
+    </div>
+  </div>
+</div>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link" id="submit-btn">Search</button>
+            </div>
+            
+          </div>
+      </form>
+      </div>
+    </section>
+
+    <%- include('includes/end.ejs') %>

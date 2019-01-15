@@ -1,0 +1,43 @@
+<%- include('includes/head.ejs') %>
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <section class="section">
+        <div class="container has-text-centered">
+                <h1 class="title is-size-1">
+                        Posts
+                    </h1>
+                
+                            <% if (posts.length > 0) { %>
+                            <div class="columns is-multiline">
+                                <% for (let post of posts) { %>
+                                  <div class="column is-one-quarter">
+                                    <div class="card">
+                                        <div class="card-content">
+                                          <div class="media">
+                                            <div class="media-content">
+                                              <p class="title is-4">u/<%= post.data.author %></p>
+                                              <p class="subtitle is-6"><%= post.data.subreddit_name_prefixed %></p>
+                                            </div>
+                                          </div>
+                                      
+                                          <div class="content">
+                                            <p><%= post.data.title %></p>
+                                            <a class="is-link" target="_blank"href="https://www.reddit.com<%= post.data.permalink %><">Link</a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </div>
+                                    <% } %>
+                                    </div>
+                            <% } else { %>
+                                <h1>No posts Found!</h1>
+                                <% } %>
+                        
+                    </div>
+                </section>
+    
+        
+   
+
+<%- include('includes/end.ejs') %>
